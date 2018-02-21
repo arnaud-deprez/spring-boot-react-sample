@@ -19,10 +19,10 @@ This example will show you how to integrate a [React](https://reactjs.org/) web 
 that frontend and backend developers used to.
 
 ---
-**NOTE**
+*NOTE*
 
-Do not hesitate to have a look at [JHipster](http://www.jhipster.tech/) project which comes a awesome and more advanced integration 
-between [Angular](https://angular.io/) (and soon [React](https://reactjs.org/)) and [Spring Boot](https://projects.spring.io/spring-boot/).
+> Do not hesitate to have a look at [JHipster](http://www.jhipster.tech/) project which comes a awesome and more advanced integration 
+> between [Angular](https://angular.io/) (and soon [React](https://reactjs.org/)) and [Spring Boot](https://projects.spring.io/spring-boot/).
 ---
 
 ## Root project
@@ -63,11 +63,11 @@ Then change the react application to use that greeting service, see:
 * [GreetingService.js](./frontend/src/GreetingService.js)
 
 ---
-**NOTE**
+*NOTE*
 
-The greeting service try to reach the API as it was exposed locally: `/api/greetings`.
-In development, we will request the development web server to act as a proxy in front our backend.
-In production, the react application will be served by [Spring Boot](https://projects.spring.io/spring-boot/) so the API is actually exposed locally.
+> The greeting service try to reach the API as it was exposed locally: `/api/greetings`.
+> In development, we will request the development web server to act as a proxy in front our backend.
+> In production, the react application will be served by [Spring Boot](https://projects.spring.io/spring-boot/) so the API is actually exposed locally.
 ---
 
 Add in [settings.gradle](./settings.gradle): 
