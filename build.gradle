@@ -1,0 +1,24 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.2.21'
+        springBootVersion = '1.5.10.RELEASE'
+        mooworkVersion = '1.2.0'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}"
+        classpath "com.moowork.gradle:gradle-node-plugin:${mooworkVersion}"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+group = 'com.powple'

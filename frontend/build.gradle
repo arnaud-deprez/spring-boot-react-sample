@@ -1,0 +1,18 @@
+apply plugin: 'base'
+apply plugin: 'com.moowork.node'
+
+task buildFrontend(type: YarnTask) {
+    args = ['build']
+}
+
+task testFrontend(type: YarnTask) {
+    args = ['test']
+}
+
+task start(type: YarnTask) {
+    args = ['start']
+}
+
+buildFrontend.dependsOn(yarn_install)
+assemble.dependsOn(buildFrontend)
+check.dependsOn(testFrontend)
