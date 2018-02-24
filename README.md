@@ -48,6 +48,13 @@ Add in [settings.gradle](./settings.gradle):
 include 'backend'
 ```
 
+### Options
+
+#### Caching static resources
+
+Add `spring.resources.cache-period: 126227704` in [application.yml](./backend/src/main/resources/application.yml) 
+to enable caching headers for 4 years.
+
 ## Frontend
 
 We will create a new react application based on [create-react-app](https://github.com/facebook/create-react-app#creating-an-app) utility: 

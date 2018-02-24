@@ -1,0 +1,4 @@
+spring:
+  resources:
+    # 4 years
+    cache-period: 126230400

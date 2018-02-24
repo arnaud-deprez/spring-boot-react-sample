@@ -15,4 +15,5 @@ task start(type: YarnTask) {
 
 buildFrontend.dependsOn(yarn_install)
 assemble.dependsOn(buildFrontend)
-check.dependsOn(testFrontend)
+//TODO: when we will have tests here.
+//check.dependsOn(testFrontend)
