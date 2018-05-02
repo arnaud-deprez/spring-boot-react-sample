@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build $BRANCH_NAME"
+                echo "Build branch: $BRANCH_NAME"
                 script {
                     if (env.TAG_NAME) {
                         echo "TAG: Build tag: $TAG_NAME"
