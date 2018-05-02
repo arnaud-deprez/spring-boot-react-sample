@@ -4,7 +4,7 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-    agent { label 'gradle' }
+    agent any
 
     stages {
         stage('Build') {
