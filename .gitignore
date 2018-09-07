@@ -93,3 +93,7 @@ typings/
 .idea
 *.iml
 out/
+.project
+.settings/
+bin/
+.classpath

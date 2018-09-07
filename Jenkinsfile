@@ -4,16 +4,21 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-    agent any
+    agent { label 'gradle-nodejs' }
 
     stages {
         stage('Build') {
             steps {
-                echo "Build branch: $BRANCH_NAME"
-                script {
-                    if (env.TAG_NAME) {
-                        echo "TAG: Build tag: $TAG_NAME"
+                checkout scm
+                container('nodejs') {
+                    echo "Build frontend..."
+                    dir('frontend') {
+                        sh "yarn install && yarn build"
                     }
+                }
+                container('gradle') {
+                    echo "Build backend"
+                    sh "gradle build -p backend -Pprod -x:frontend:assemble"
                 }
             }
         }
