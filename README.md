@@ -109,9 +109,9 @@ so we can make build tasks from the backend to depends on frontend gradle assemb
 include 'frontend'
 ```
 
-2. Map yarn/npm tasks to gradle tasks in [builg.gradle](./frontend/build.gradle) in frontend.
+2. Map yarn/npm tasks to gradle tasks in [build.gradle](./frontend/build.gradle) in frontend.
 
-3. Make backend gradle build tasks depending on frontend gradle assemble tasks in [builg.gradle](./backend/build.gradle) in backend 
+3. Make backend gradle build tasks depending on frontend gradle assemble tasks in [build.gradle](./backend/build.gradle) in backend 
 and copy the frontend build output into `/static` folder in the jar file. More information on [how spring-boot can serve static content](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-static-content) 
 
 That's it!
