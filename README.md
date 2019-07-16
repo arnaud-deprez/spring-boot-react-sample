@@ -40,7 +40,7 @@ Here I choose:
 * artifact id: backend
 * dependencies: _Web_
 
-Then create a web service that will be used by the frontend: [GreetingControllger](./backend/src/main/kotlin/com/powple/backend/rest/GreetingController.kt)
+Then create a web service that will be used by the frontend: [GreetingController](./backend/src/main/kotlin/com/powple/backend/rest/GreetingController.kt)
 
 Add in [settings.gradle](./settings.gradle): 
 
