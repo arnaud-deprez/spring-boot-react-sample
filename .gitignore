@@ -93,3 +93,6 @@ typings/
 .idea
 *.iml
 out/
+.project
+.settings
+.vscode

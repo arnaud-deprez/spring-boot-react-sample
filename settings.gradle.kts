@@ -14,8 +14,13 @@ include 'shared'
 include 'api'
 include 'services:webservice'
 */
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
 
-rootProject.name = 'spring-boot-react-sample'
-include 'frontend'
-include 'backend'
+rootProject.name = "spring-boot-react-sample"
 
+include("frontend")
+include("backend")

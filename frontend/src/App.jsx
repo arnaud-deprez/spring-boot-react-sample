@@ -1,48 +1,52 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import GreetingService from './GreetingService'
 import logo from './logo.svg';
 import './App.css';
 
-class Greeting extends React.Component {
-    render() {
-        const {id = null, content = ''} = this.props.message ? this.props.message : {};
-        return (
-            <p className="App-intro">
-                {`${id ? id + ': ' : ''} ${content}`}
-            </p>
-        );
-    }
-}
+const Header = () => {
+    return (
+        <header className="app-header">
+            <img src={logo} className="app-logo" alt="logo"/>
+            <h1 className="app-title">Welcome to React</h1>
+        </header>);
+};
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+const GreetingMessage = ({message = {}}) => {
+    const {id = null, content = ''} = message;
+    return (
+        <p className="app-intro">
+            {`${id ? id + ': ' : ''} ${content}`}
+        </p>
+    );
+};
 
-        this.greetingService = new GreetingService();
-        this.onclick = this.onclick.bind(this);
-    }
+const Greeting = ({onClick}) => {
+    const inputEl = useRef("");
+    return (
+        <div>
+            <input type="text" ref={inputEl}/>
+            <button onClick={() => onClick(inputEl.current.value)}>
+                Say Hi!
+            </button>
+        </div>
+    );
+};
 
-    onclick() {
-        this.greetingService.greetings(this.input.value)
-            .then(message => this.setState({
-                message
-            }));
-    }
+const App = () => {
+    const [message, setMessage] = useState("");
+    const greetingService = new GreetingService();
 
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <input type="text" ref={node => this.input = node}/>
-                <button onClick={this.onclick}>
-                    Say Hi!
-                </button>
-                <Greeting message={this.state.message}/>
-            </div>
-        );
-    }
-}
+    const onClick = value =>
+        greetingService.greetings(value)
+            .then(setMessage);
+
+    return (
+        <div className="app">
+            <Header/>
+            <Greeting onClick={onClick}/>
+            <GreetingMessage message={message}/>
+        </div>
+    );
+};
+
+export default App;

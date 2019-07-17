@@ -1,4 +1,5 @@
 spring:
   resources:
-    # 4 years
-    cache-period: 126230400
+    cache:
+      # 4 years.
+      period: 126230400
