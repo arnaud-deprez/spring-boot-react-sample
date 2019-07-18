@@ -41,9 +41,14 @@ Here I choose:
 * artifact id: backend
 * dependencies: _Spring Reactive Web_, _Spring Boot DevTools_
 
-Then create a web service that will be used by the frontend: [GreetingController](./backend/src/main/kotlin/com/powple/backend/rest/GreetingController.kt)
+Then we will create a web service that will be used by the frontend.
+Here I decided to use the Webflux functional endpoints. See [RoutesConfiguration](./backend/src/main/kotlin/com/powple/backend/config/RoutesConfiguration.kt).
 
-Add in [settings.gradle](./settings.gradle): 
+In order to use SPA application router (eg. angular, reactjs or vuejs router), we have to resolve unknown path to the `index.html` page.
+This is achieved thanks to [SpaWebFluxConfigurer](./backend/src/main/kotlin/com/powple/backend/config/SpaWebFluxConfigurer.kt) 
+and the [`/` route](./backend/src/main/kotlin/com/powple/backend/config/RoutesConfiguration.kt)
+
+Then add in [settings.gradle](./settings.gradle): 
 
 ```groovy
 include 'backend'
