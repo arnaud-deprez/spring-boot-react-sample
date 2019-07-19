@@ -48,7 +48,7 @@ In order to use SPA application router (eg. angular, reactjs or vuejs router), w
 This is achieved thanks to [SpaWebFluxConfigurer](./backend/src/main/kotlin/com/powple/backend/config/SpaWebFluxConfigurer.kt) 
 and the [`/` route](./backend/src/main/kotlin/com/powple/backend/config/RoutesConfiguration.kt)
 
-Then add in [settings.gradle](./settings.gradle): 
+Then add in [settings.gradle.kts](./settings.gradle.kts): 
 
 ```groovy
 include 'backend'
@@ -83,7 +83,7 @@ Then change the react application to use that greeting service, see:
 > In production, the react application will be served by [Spring Boot](https://projects.spring.io/spring-boot/) so the API is actually exposed locally.
 ---
 
-Add in [settings.gradle](./settings.gradle): 
+Add in [settings.gradle.kts](./settings.gradle.kts): 
 
 ```kotlin
 include("backend")
@@ -134,15 +134,15 @@ We need to package the result of the build made by `yarn build` command to the [
 In order to do that, we will use the [gradle-node-plugin](https://github.com/node-gradle/gradle-node-plugin) to allow us to run yarn/npm tasks from gradle 
 and at the end, make `processResources` task from the backend to depends on frontend `yarn build`.
 
-1. First, add in [settings.gradle](./settings.gradle) before backend:          
+1. First, add in [settings.gradle.kts](./settings.gradle.kts) before backend:          
 
 ```groovy
 include("frontend")
 ```
 
-2. Make yarn/npm tasks depends on gradle tasks in [build.gradle](./frontend/build.gradle) in frontend.
+2. Make yarn/npm tasks depends on gradle tasks in [build.gradle.kts](./frontend/build.gradle.kts) in frontend.
 
-3. Make backend gradle `processResources` task depending on frontend gradle `yarn_build` tasks in [build.gradle](./backend/build.gradle) in backend 
+3. Make backend gradle `processResources` task depending on frontend gradle `yarn_build` tasks in [build.gradle](./backend/build.gradle.kts) in backend 
 and copy the frontend build output into `/static` folder in the jar file. More information on [how spring-boot can serve static content](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-developing-web-applications.html#boot-features-spring-mvc-static-content).
 
 ---
