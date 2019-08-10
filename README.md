@@ -50,8 +50,8 @@ and the [`/` route](./backend/src/main/kotlin/com/powple/backend/config/RoutesCo
 
 Then add in [settings.gradle.kts](./settings.gradle.kts): 
 
-```groovy
-include 'backend'
+```kotlin
+include('backend')
 ```
 
 ### Options
@@ -136,7 +136,7 @@ and at the end, make `processResources` task from the backend to depends on fron
 
 1. First, add in [settings.gradle.kts](./settings.gradle.kts) before backend:          
 
-```groovy
+```kotlin
 include("frontend")
 ```
 
