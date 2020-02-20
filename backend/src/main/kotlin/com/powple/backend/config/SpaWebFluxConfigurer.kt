@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.web.ResourceProperties
 import org.springframework.boot.autoconfigure.web.reactive.WebFluxProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.ClassPathResource
-import org.springframework.core.io.FileSystemResource
 import org.springframework.core.io.Resource
 import org.springframework.http.CacheControl
 import org.springframework.web.reactive.config.ResourceHandlerRegistry

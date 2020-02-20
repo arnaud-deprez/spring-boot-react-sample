@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	kotlin("jvm")
-	kotlin("plugin.spring") version "1.3.41"
+	kotlin("plugin.spring") version "1.3.61"
 	id("io.spring.dependency-management")
-	id("org.springframework.boot") version "2.1.6.RELEASE"
+	id("org.springframework.boot") version "2.2.4.RELEASE"
 }
 
 val developmentOnly by configurations.creating

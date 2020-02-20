@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.web.ResourceProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.ResourceLoader
-import org.springframework.web.reactive.function.server.RouterFunctions
 import org.springframework.web.reactive.function.server.router
-import reactor.core.publisher.toFlux
 import reactor.core.publisher.toMono
 
 @Configuration
